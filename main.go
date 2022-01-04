@@ -114,7 +114,7 @@ func Process(networkName string, networkSize int, threshold float64, nmsThreshol
 
 	OutputNames := getOutputsNames(&net)
 
-	window := gocv.NewWindow("yolo")
+	//window := gocv.NewWindow("yolo")
 	img := gocv.IMRead(filename, gocv.IMReadColor)
 	defer img.Close()
 
@@ -126,7 +126,7 @@ func Process(networkName string, networkSize int, threshold float64, nmsThreshol
 	fmt.Println("Time taken: ", endTime.Sub(startTime))
 	fmt.Printf("Dectect Class : %v\n", detectClass)
 	fmt.Printf("Dectect Confidence : %v\n", detectConfidence)
-	window.IMShow(detectImg)
+	//window.IMShow(detectImg)
 	gocv.IMWrite("result.jpg", detectImg)
 	gocv.WaitKey(0)
 
